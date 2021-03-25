@@ -17,7 +17,11 @@ const Todo = props => {
             }
             setTodoList(todos);
         } )
-    })
+    }, [])
+    // the second arguement to useEffect controls on what changes the useeffect will run.....
+    //all the values in second argument are checked if they changed and if so only then useeffect runs
+
+    // sending an empty [] as the second arguement works just like componentdidMount i.e it will only run once when the component mounts
 
     const inputChangeHandler = (event) => {
         setTodoName(event.target.value);
